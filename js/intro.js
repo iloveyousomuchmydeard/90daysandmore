@@ -2,7 +2,7 @@
   var T = LH.CONFIG.intro;
 
   var LINES = [
-    'Привет, любимая.',
+    'Привет, любимая',
     'Я кое-что для тебя приготовил',
     'Слова, которые я готов говорить каждый день',
     'Сотни раз, на всех языках мира',
@@ -25,9 +25,12 @@
       return;
     }
 
+    var BEGIN_DELAY = 900;
+    var LEAD = BEGIN_DELAY + LINES.length * (T.fadeIn + T.hold + T.fadeOut + T.gap);
+
     function show(index) {
       if (index >= LINES.length) {
-        reveal();
+        LH.music.whenAtHit(reveal);
         return;
       }
 
@@ -54,7 +57,9 @@
       if (started) return;
       started = true;
       root.classList.add('is-started');
-      setTimeout(function () { show(0); }, 900);
+      LH.music.unlock();
+      setTimeout(function () { show(0); }, BEGIN_DELAY);
+      setTimeout(LH.music.start, Math.max(0, LEAD - LH.music.hitSec * 1000));
     }
 
     root.addEventListener('click', begin);
