@@ -1,0 +1,59 @@
+.counter {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 3.5vh);
+  left: 0;
+  right: 0;
+  padding: 0 12px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 2.2s ease, transform 2.2s ease;
+}
+
+.counter.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.counter__title {
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.counter__row {
+  display: inline-flex;
+  gap: clamp(10px, 3vw, 28px);
+}
+
+.counter__cell {
+  min-width: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter__num {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(26px, 4.6vw, 38px);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, var(--rose-300), var(--rose-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.counter__label {
+  margin-top: 7px;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}

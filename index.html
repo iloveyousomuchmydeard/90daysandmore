@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Я люблю тебя</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Marck+Script&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/counter.css">
+  <link rel="stylesheet" href="css/letter.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+<body class="is-intro">
+  <canvas id="scene"></canvas>
+  <section class="counter" id="counter" aria-label="Сколько мы вместе"></section>
+  <footer id="hint" class="is-hidden">Потяни, чтобы покрутить</footer>
+
+  <div class="intro" id="intro" tabindex="0" role="button" aria-label="Нажми, чтобы начать">
+    <div class="intro__center">
+      <div class="intro__heart">
+        <svg viewBox="0 0 32 29" aria-hidden="true">
+          <defs>
+            <linearGradient id="introGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffb3c6"/>
+              <stop offset="1" stop-color="#e11d48"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#introGrad)" d="M23.6 0c-3.4 0-5.7 1.8-7.6 4.2C14.1 1.8 11.8 0 8.4 0 3.8 0 0 3.8 0 8.6c0 7.6 8.4 12.8 16 20.4 7.6-7.6 16-12.8 16-20.4C32 3.8 28.2 0 23.6 0z"/>
+        </svg>
+      </div>
+      <div class="intro__caption">
+        <p class="intro__start">Нажми, чтобы начать</p>
+        <p class="intro__text" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/languages.js"></script>
+  <script src="js/letter.js"></script>
+  <script src="js/heart-geometry.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/letter-view.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
